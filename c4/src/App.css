@@ -1,0 +1,223 @@
+/* General Styling */
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Start Screen */
+.start-screen {
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #ff00ff;
+  animation: bounceIn 1s ease-in-out;
+}
+
+h1 {
+  font-size: 24px;
+  text-shadow: 3px 3px 5px #ff00ff;
+}
+
+input {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 2px solid #ff00ff;
+  background: black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+button {
+  background: #ff00ff;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff00ff;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+/* Grid Styling */
+.grid {
+  display: grid;
+  grid-template-rows: repeat(6, 60px);
+  gap: 5px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #222;
+  box-shadow: 0 0 15px #00ffff;
+  animation: bounceIn 0.8s ease-in-out;
+  position: relative;
+}
+
+/* Row */
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+/* Individual Cell */
+.cell {
+  width: 60px;
+  height: 60px;
+  background: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Cell Hover Effect */
+.cell:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Disc Appearance */
+.disc {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px white;
+  position: absolute;
+  animation: dropDisc 1s ease-out forwards, bounce 0.6s ease-in-out forwards;
+  opacity: 1;
+}
+
+/* Player X (Red) */
+.disc.X {
+  background: #ff0000;
+  box-shadow: 0 0 15px #ff0000;
+}
+
+/* Player O (Blue) */
+.disc.O {
+  background: #0077ff;
+  box-shadow: 0 0 15px #0077ff;
+}
+
+/* Win Message */
+h2 {
+  font-size: 18px;
+  text-shadow: 3px 3px 5px #00ffff;
+}
+
+/* Play Again Button */
+button {
+  margin-top: 15px;
+}
+
+/* Bounce-in Animation */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Disc Drop Animation */
+@keyframes dropDisc {
+  0% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Disc Bounce Effect */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Popup Styling */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-content {
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff00ff;
+  text-align: center;
+}
+
+.popup button {
+  background: #ff00ff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.popup button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff00ff;
+}
