@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Confetti from "react-confetti";
+import useWindowSize from "react-use/lib/useWindowSize";
 import "./App.css";
 
 const MAX_WIDTH = 6;
@@ -10,6 +12,7 @@ const createEmptyGrid = () =>
     .map(() => Array(MAX_WIDTH).fill(null));
 
 const App = () => {
+  const { width, height } = useWindowSize();
   const [grid, setGrid] = useState(createEmptyGrid());
   const [playerOne, setPlayerOne] = useState("");
   const [playerTwo, setPlayerTwo] = useState("");
@@ -18,10 +21,17 @@ const App = () => {
   const [isDraw, setIsDraw] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [error, setError] = useState("");
+  const [showConfetti, setShowConfetti] = useState(false);
 
-  const checkDraw = (grid) => {
-    return grid.every(row => row.every(cell => cell !== null));
-  };
+  useEffect(() => {
+    if (winner) {
+      setShowConfetti(true);
+      const timer = setTimeout(() => setShowConfetti(false), 3000); // Stop confetti after 3 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [winner]);
+
+  const checkDraw = (grid) => grid.every((row) => row.every((cell) => cell !== null));
 
   const handleDrop = (col) => {
     if (winner || isDraw) return;
@@ -99,14 +109,6 @@ const App = () => {
     setPlayerTwo("");
   };
 
-  const closePopup = () => {
-    setGrid(createEmptyGrid());
-    setWinner(null);
-    setIsDraw(false);
-    setGameStarted(false);
-    setActivePlayer("X");
-  };
-
   const startGame = () => {
     if (!playerOne || !playerTwo) {
       setError("Both player names are required to start the game.");
@@ -118,8 +120,10 @@ const App = () => {
 
   return (
     <div className="App">
+      {showConfetti && <Confetti width={width} height={height} />}
+      <h1 className="title">Connect 4</h1>
       {!gameStarted ? (
-        <div>
+        <div className="input-container">
           <input
             type="text"
             placeholder="Player One Name"
@@ -136,7 +140,8 @@ const App = () => {
           {error && <p className="error">{error}</p>}
         </div>
       ) : (
-        <div>
+        <div className="game-container">
+          <button className="reset-btn" onClick={resetGame}>Reset Game</button>
           <h2>
             {winner
               ? `${winner === "X" ? playerOne : playerTwo} Wins!`
@@ -160,15 +165,13 @@ const App = () => {
             ))}
           </div>
           {(winner || isDraw) && (
-            <div className="popup">
-              <div className="popup-content">
-                <h3>
-                  {winner
-                    ? `${winner === "X" ? playerOne : playerTwo} Wins!`
-                    : "Game Draw!"}
-                </h3>
-                <button onClick={closePopup}>Play Again</button>
-              </div>
+            <div className="popup-side">
+              <h3>
+                {winner
+                  ? `${winner === "X" ? playerOne : playerTwo} Wins!`
+                  : "Game Draw!"}
+              </h3>
+              <button className="popup-btn" onClick={resetGame}>Play Again</button>
             </div>
           )}
         </div>
