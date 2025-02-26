@@ -26,7 +26,7 @@ const App = () => {
   useEffect(() => {
     if (winner) {
       setShowConfetti(true);
-      const timer = setTimeout(() => setShowConfetti(false), 3000); // Stop confetti after 3 seconds
+      const timer = setTimeout(() => setShowConfetti(false), 3000);
       return () => clearTimeout(timer);
     }
   }, [winner]);
@@ -63,8 +63,7 @@ const App = () => {
           grid[r][c + 1] === marker &&
           grid[r][c + 2] === marker &&
           grid[r][c + 3] === marker
-        )
-          return true;
+        ) return true;
 
         if (
           r + 3 < MAX_HEIGHT &&
@@ -72,8 +71,7 @@ const App = () => {
           grid[r + 1][c] === marker &&
           grid[r + 2][c] === marker &&
           grid[r + 3][c] === marker
-        )
-          return true;
+        ) return true;
 
         if (
           r + 3 < MAX_HEIGHT &&
@@ -82,8 +80,7 @@ const App = () => {
           grid[r + 1][c + 1] === marker &&
           grid[r + 2][c + 2] === marker &&
           grid[r + 3][c + 3] === marker
-        )
-          return true;
+        ) return true;
 
         if (
           r + 3 < MAX_HEIGHT &&
@@ -92,26 +89,31 @@ const App = () => {
           grid[r + 1][c - 1] === marker &&
           grid[r + 2][c - 2] === marker &&
           grid[r + 3][c - 3] === marker
-        )
-          return true;
+        ) return true;
       }
     }
     return false;
   };
 
-  const resetGame = () => {
+  const resetGame = (keepNames = false) => {
     setGrid(createEmptyGrid());
     setWinner(null);
     setIsDraw(false);
     setActivePlayer("X");
-    setGameStarted(false);
-    setPlayerOne("");
-    setPlayerTwo("");
+    setGameStarted(keepNames);
+    if (!keepNames) {
+      setPlayerOne("");
+      setPlayerTwo("");
+    }
   };
 
   const startGame = () => {
     if (!playerOne || !playerTwo) {
       setError("Both player names are required to start the game.");
+      return;
+    }
+    if (playerOne === playerTwo) {
+      setError("Player names must be different.");
       return;
     }
     setError("");
@@ -141,7 +143,7 @@ const App = () => {
         </div>
       ) : (
         <div className="game-container">
-          <button className="reset-btn" onClick={resetGame}>Reset Game</button>
+          <button className="reset-btn" onClick={() => resetGame(false)}>Reset Game</button>
           <h2>
             {winner
               ? `${winner === "X" ? playerOne : playerTwo} Wins!`
@@ -171,7 +173,7 @@ const App = () => {
                   ? `${winner === "X" ? playerOne : playerTwo} Wins!`
                   : "Game Draw!"}
               </h3>
-              <button className="popup-btn" onClick={resetGame}>Play Again</button>
+              <button className="popup-btn" onClick={() => resetGame(true)}>Play Again</button>
             </div>
           )}
         </div>
