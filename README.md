@@ -41,9 +41,7 @@ A modern, visually appealing **Connect 4** game built with **React and Vite**. P
 ---
 
 ## 🎥 Video Demo
-[![Watch the video](./screenshots/video-thumbnail.png)]
-
-> Replace the link with your actual game demo video.
+[![Watch the video](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Connect%204.mp4)]
 
 ---
 
