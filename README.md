@@ -17,6 +17,27 @@ A modern, visually appealing **Connect 4** game built with **React and Vite**. P
 ### Landing Page:
 ![Landing Page](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Landing.png)
 
+### Enter Name:
+![Enter Name](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Enter%20name.png)
+
+### Same Name Error:
+![Same Name Error](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Same%20name.png)
+
+### UI Overview:
+![UI Overview](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/UI.png)
+
+### Horizontal Win:
+![Horizontal Win](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Horizontal.png)
+
+### Vertical Win:
+![Vertical Win](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Vertical.png)
+
+### Diagonal Win:
+![Diagonal Win](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Diagonal.png)
+
+### Draw Condition:
+![Draw Condition](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Draw.png)
+
 ---
 
 ## 🎥 Video Demo
