@@ -54,7 +54,7 @@ Ensure you have the following installed:
 
 ### Clone the Repository
 ```sh
- git clone https://github.com/yourusername/connect4-game.git
+ git clone https://github.com/Vedant-0102/Connect-4.git
  cd connect4-game
 ```
 
