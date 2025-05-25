@@ -38,15 +38,6 @@ A modern, visually appealing Connect 4 game built with React and Vite. Play agai
 ### Draw Condition:
 ![Draw Condition](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Draw.png)
 
----
-
-<<<<<<< HEAD
-=======
-## 🎥 Video Demo
-[![Watch the video](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Connect%204.mp4)]
-
->>>>>>> 75ed2d2665ec24aa25644ffb92ee73909473b185
----
 
 ## Installation & Setup
 
