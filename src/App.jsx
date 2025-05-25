@@ -24,6 +24,15 @@ const App = () => {
   const [showConfetti, setShowConfetti] = useState(false);
 
   useEffect(() => {
+    // Disable page scroll when the game ends (win or draw), enable otherwise.
+    if (winner || isDraw) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [winner, isDraw]);
+
+  useEffect(() => {
     if (winner) {
       setShowConfetti(true);
       const timer = setTimeout(() => setShowConfetti(false), 3000);

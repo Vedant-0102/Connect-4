@@ -1,18 +1,18 @@
-# Connect 4 Game 🎮
+# Connect 4 Game 
 
-A modern, visually appealing **Connect 4** game built with **React and Vite**. Play against a friend and enjoy smooth animations, confetti celebrations, and an interactive experience!
+A modern, visually appealing Connect 4 game built with React and Vite. Play against a friend and enjoy smooth animations, confetti celebrations, and an interactive experience!
 
-## ⭐ Features
-- 🎨 **Retro Pixel Art Theme** (Inspired by arcade games)
-- 🏆 **Win Detection** with Confetti Celebration
-- 🎭 **Player Indicators** (Red vs. Blue)
-- 📜 **Smooth Disc Drop Animation**
-- 📌 **Restart Button** to Reset the Game
-- 🖥️ **Responsive Design** (Playable on Desktop & Mobile)
+## Features
+- **Retro Pixel Art Theme** (Inspired by arcade games)
+- **Win Detection** with Confetti Celebration
+- **Player Indicators** (Red vs. Blue)
+- **Smooth Disc Drop Animation**
+- **Restart Button** to Reset the Game
+- **Responsive Design** (Playable on Desktop & Mobile)
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Landing Page:
 ![Landing Page](https://github.com/Vedant-0102/Connect-4/blob/main/connect4/assets/Landing.png)
@@ -40,14 +40,9 @@ A modern, visually appealing **Connect 4** game built with **React and Vite**. P
 
 ---
 
-## 🎥 Video Demo
-[![Watch the video](./screenshots/video-thumbnail.png)]
-
-> Replace the link with your actual game demo video.
-
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 Ensure you have the following installed:
@@ -75,12 +70,12 @@ Ensure you have the following installed:
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 - **React** (Frontend UI)
 - **Vite** (Fast Development & Build Tool)
 - **CSS Animations** (Smooth UI Effects)
 
 ---
 
-## 📜 License
+## License
 This project is publicly accessible, but the code is not available for reuse or modification.
